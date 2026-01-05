@@ -1,4 +1,4 @@
-import MusicListCard from "@/components/MusicListCard/MusicListCard";
+import MusicListCard from "@/components/MusicListCard";
 
 import { getAllMusic } from "@/db/music";
 
