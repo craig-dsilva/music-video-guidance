@@ -6,18 +6,16 @@ const Home = async () => {
   const allMusicData = await getAllMusic();
 
   return (
-    <div className="">
-      <main className="">
-        {allMusicData.map((music, index) => (
-          <MusicListCard
-            key={index}
-            title={music.title}
-            artist={music.artist}
-            date={music.date}
-          />
-        ))}
-      </main>
-    </div>
+    <main className="mx-5">
+      {allMusicData.map((music, index) => (
+        <MusicListCard
+          key={index}
+          title={music.title}
+          artist={music.artist}
+          date={music.date}
+        />
+      ))}
+    </main>
   );
 };
 

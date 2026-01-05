@@ -6,8 +6,8 @@ interface MusicListCardInterface {
 
 const MusicListCard = ({ title, artist, date }: MusicListCardInterface) => {
   return (
-    <div>
-      <p>{title}</p>
+    <div className="mb-5">
+      <h3>{title}</h3>
       <p>{artist}</p>
       <p>{date}</p>
     </div>
