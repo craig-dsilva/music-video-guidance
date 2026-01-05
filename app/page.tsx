@@ -1,12 +1,21 @@
-import getData from "@/db/getAllSongs";
+import MusicListCard from "@/components/MusicListCard";
+
+import { getAllMusic } from "@/db/music";
 
 const Home = async () => {
-  const data = await getData();
+  const allMusicData = await getAllMusic();
 
   return (
-    <div className="">
-      <main className=""></main>
-    </div>
+    <main className="mx-5">
+      {allMusicData.map((music, index) => (
+        <MusicListCard
+          key={index}
+          title={music.title}
+          artist={music.artist}
+          date={music.date}
+        />
+      ))}
+    </main>
   );
 };
 
