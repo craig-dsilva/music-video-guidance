@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header>
+    <header className="mb-2">
       <h1>
         <Link href="/">MVG</Link>
       </h1>
