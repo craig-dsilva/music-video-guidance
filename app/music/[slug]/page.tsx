@@ -1,12 +1,30 @@
+import { ObjectId } from "mongodb";
+
 import { getMusic } from "@/db/music";
 
 interface paramsInterface {
   params: Promise<{ slug: string }>;
 }
 
+interface musicInterface {
+  _id: ObjectId;
+  title: string;
+  artist: string;
+  views: number;
+  duration: number;
+  date: string;
+  url: string;
+  description: string;
+  rating: string;
+  content: string[];
+  notes: string;
+  isAgeRestricted: string;
+  safeAlternative: string;
+}
+
 const music = async ({ params }: paramsInterface) => {
   const { slug } = await params;
-  const music = await getMusic(slug);
+  const music = (await getMusic(slug)) as musicInterface;
 
   const videoDuration = (duration: number) => {
     const minutes = Math.floor(duration / 60);
