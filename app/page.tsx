@@ -10,6 +10,7 @@ const Home = async () => {
       {allMusicData.map((music, index) => (
         <MusicListCard
           key={index}
+          id={music._id}
           title={music.title}
           artist={music.artist}
           date={music.date}
