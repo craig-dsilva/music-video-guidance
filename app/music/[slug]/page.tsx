@@ -15,15 +15,18 @@ const music = async ({ params }: paramsInterface) => {
   };
 
   return (
-    <div>
+    <div className="mx-5">
       <h4>{music.title}</h4>
-      <h5>{music.artist}</h5>
-      <iframe src={music.url} />
-      <p>{music.description}</p>
+      <h5 className="mb-5">{music.artist}</h5>
+      <iframe className="mb-5" src={music.url} />
+      <p>Description</p>
+      <p className="mb-5">{music.description}</p>
       <p>Rating: {music.rating}</p>
       <ul>
         {music.content.map((e, i) => (
-          <li key={i}>{e}</li>
+          <li className="px-2 py-5" key={i}>
+            {e}
+          </li>
         ))}
       </ul>
       <p>Is Age Restricted: {music.isAgeRestricted}</p>
