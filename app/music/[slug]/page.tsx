@@ -23,7 +23,7 @@ const music = async ({ params }: paramsInterface) => {
       <p>Rating: {music.rating}</p>
       <ul>
         {music.content.map((e, i) => (
-          <li key={i}>e</li>
+          <li key={i}>{e}</li>
         ))}
       </ul>
       <p>Is Age Restricted: {music.isAgeRestricted}</p>
