@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Music Video Guidance",
   description: "This website is a parental guidance for music videos.",
-  icons: { icon: "/music.png" },
+  icons: { icon: "/music.png" }, //https://www.flaticon.com/free-icons/google-play-music. Google play music icons created by Mayor Icons - Flaticon.
 };
 
 const RootLayout = ({
