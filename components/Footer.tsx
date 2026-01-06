@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy; MVG {new Date().getFullYear()}</p>
+    <footer className="py-5 text-center">
+      <p>&copy; {new Date().getFullYear()} Music Video Guidance</p>
     </footer>
   );
 };
