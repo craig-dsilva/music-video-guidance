@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Music Video Guidance",
-  description: "",
+  description: "This website is a parental guidance for music videos.",
+  icons: { icon: "/music.png" },
 };
 
 const RootLayout = ({
