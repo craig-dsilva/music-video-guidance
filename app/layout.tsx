@@ -28,7 +28,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-lg`}
+        className={`${geistSans.variable} ${geistMono.variable} text-lg antialiased`}
       >
         <Header />
         {children}
