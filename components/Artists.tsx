@@ -9,7 +9,7 @@ const artistDisplay = (artist: string, index: number, arr: string[]) =>
 const Artists = ({ artists, featuringArtists }: ArtistsInterface) => {
   console.log(typeof artists);
   return (
-    <div className="flex flex-row gap-1">
+    <div className="mb-5 flex flex-row gap-1">
       <div>{artists.map(artistDisplay)}</div>
       {featuringArtists && featuringArtists.length > 0 && (
         <p data-testid="feat">ft.</p>

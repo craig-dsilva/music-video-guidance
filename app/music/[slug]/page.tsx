@@ -37,12 +37,10 @@ const music = async ({ params }: paramsInterface) => {
   return (
     <div className="mx-5">
       <h4>{music.title}</h4>
-      <h5 className="mb-5">
-        <Artists
-          artists={music.artist}
-          featuringArtists={music.featuringArtist}
-        />
-      </h5>
+      <Artists
+        artists={music.artist}
+        featuringArtists={music.featuringArtist}
+      />
       <iframe className="mb-5" src={music.url} />
       <p>Description</p>
       <p className="mb-5">{music.description}</p>
