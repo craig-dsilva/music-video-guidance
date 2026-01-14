@@ -1,7 +1,8 @@
-import { ObjectId } from "mongodb";
-
 import { getMusic } from "@/db/music";
 
+import Artists from "@/components/Artists";
+
+import type { ObjectId } from "mongodb";
 interface paramsInterface {
   params: Promise<{ slug: string }>;
 }
@@ -9,7 +10,8 @@ interface paramsInterface {
 interface musicInterface {
   _id: ObjectId;
   title: string;
-  artist: string;
+  artist: string[];
+  featuringArtist: string[];
   views: number;
   duration: number;
   date: string;
@@ -35,7 +37,10 @@ const music = async ({ params }: paramsInterface) => {
   return (
     <div className="mx-5">
       <h4>{music.title}</h4>
-      <h5 className="mb-5">{music.artist}</h5>
+      <Artists
+        artists={music.artist}
+        featuringArtists={music.featuringArtist}
+      />
       <iframe className="mb-5" src={music.url} />
       <p>Description</p>
       <p className="mb-5">{music.description}</p>

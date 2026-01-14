@@ -13,6 +13,6 @@ try {
   throw new Error("Failed to connect to database " + e);
 }
 
-let db = conn.db("music-video-guidance");
+const db = conn.db("music-video-guidance");
 
 export default db;
