@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ArtistsInterface {
   artists: string[];
   featuringArtists?: string[];

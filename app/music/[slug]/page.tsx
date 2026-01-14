@@ -1,9 +1,8 @@
-import { ObjectId } from "mongodb";
-
 import { getMusic } from "@/db/music";
 
 import Artists from "@/components/Artists";
 
+import type { ObjectId } from "mongodb";
 interface paramsInterface {
   params: Promise<{ slug: string }>;
 }

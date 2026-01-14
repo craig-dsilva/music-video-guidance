@@ -1,7 +1,7 @@
-import { ObjectId } from "mongodb";
-
 import Link from "next/link";
 import Artists from "./Artists";
+
+import type { ObjectId } from "mongodb";
 
 interface MusicListCardInterface {
   id: ObjectId;
