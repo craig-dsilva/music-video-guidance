@@ -13,6 +13,7 @@ const Home = async () => {
           id={music._id}
           title={music.title}
           artist={music.artist}
+          featuringArtist={music.featuringArtist}
           date={music.date}
         />
       ))}
