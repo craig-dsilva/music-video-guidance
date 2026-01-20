@@ -19,7 +19,7 @@ const MusicListCard = ({
   return (
     <div className="mb-5">
       <Link href={`/music/${id}`}>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
       </Link>
       <Artists artists={artist} featuringArtists={featuringArtist} />
     </div>
