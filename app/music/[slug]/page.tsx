@@ -1,13 +1,12 @@
-import { getMusic } from "@/db/music";
-
 import Artists from "@/components/Artists";
 
-import type { ObjectId } from "mongodb";
+import type { ObjectId } from "mongoose";
+
 interface paramsInterface {
   params: Promise<{ slug: string }>;
 }
 
-interface musicInterface {
+export interface musicInterface {
   _id: ObjectId;
   title: string;
   artist: string[];
@@ -26,7 +25,11 @@ interface musicInterface {
 
 const music = async ({ params }: paramsInterface) => {
   const { slug } = await params;
-  const music = (await getMusic(slug)) as musicInterface;
+  const data = await fetch(`http://localhost:3000/api/music/${slug}`, {
+    cache: "no-store",
+  });
+  const musicData = await data.json();
+  const music = musicData.data;
 
   const videoDuration = (duration: number) => {
     const minutes = Math.floor(duration / 60);
@@ -46,9 +49,9 @@ const music = async ({ params }: paramsInterface) => {
       <p className="mb-5">{music.description}</p>
       <p>Rating: {music.rating}</p>
       <ul>
-        {music.content.map((e, i) => (
+        {music.content.map((c: string, i: number) => (
           <li className="px-2 py-5" key={i}>
-            {e}
+            {c}
           </li>
         ))}
       </ul>

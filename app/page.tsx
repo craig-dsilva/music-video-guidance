@@ -1,20 +1,21 @@
 import MusicListCard from "@/components/MusicListCard";
-
-import { getAllMusic } from "@/db/music";
+import type { musicInterface } from "./music/[slug]/page";
 
 const Home = async () => {
-  const allMusicData = await getAllMusic();
+  const data = await fetch("http://localhost:3000/api/music", {
+    cache: "no-store",
+  });
+  const music = await data.json();
 
   return (
     <main className="mx-5">
-      {allMusicData.map((music, index) => (
+      {music.data.map((music: musicInterface, index: number) => (
         <MusicListCard
           key={index}
           id={music._id}
           title={music.title}
           artist={music.artist}
           featuringArtist={music.featuringArtist}
-          date={music.date}
         />
       ))}
     </main>
