@@ -1,8 +1,46 @@
 import Form from "next/form";
 
+interface newMusicInterface {
+  title: string;
+  artist: string;
+  duration: number;
+  date: string;
+  url: string;
+  isAgeRestricted: string;
+}
+
+const addMusicData = async (formData: FormData) => {
+  "use server";
+
+  const title = formData.get("title");
+  const artist = formData.get("artist");
+  const duration = formData.get("duration");
+  const date = formData.get("release-date");
+  const url = formData.get("link");
+  const isAgeRestricted = formData.get("age-restricted");
+
+  const data = {
+    title,
+    artist,
+    duration,
+    date,
+    url,
+    isAgeRestricted,
+  };
+
+  try {
+    await fetch("http://localhost:3000/api/music", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 const addMusic = () => {
   return (
-    <Form className="flex flex-col gap-2 px-5" action={""}>
+    <Form className="flex flex-col gap-2 px-5" action={addMusicData}>
       <label htmlFor="title">Title:</label>
       <input type="text" name="title" id="title" required />
       <label htmlFor="artist">Artists:</label>
