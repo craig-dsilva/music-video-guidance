@@ -1,14 +1,5 @@
 import Form from "next/form";
 
-interface newMusicInterface {
-  title: string;
-  artist: string;
-  duration: number;
-  date: string;
-  url: string;
-  isAgeRestricted: string;
-}
-
 const addMusicData = async (formData: FormData) => {
   "use server";
 
