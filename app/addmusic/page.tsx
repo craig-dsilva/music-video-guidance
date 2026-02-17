@@ -5,20 +5,28 @@ const addMusicData = async (formData: FormData) => {
 
   const title = formData.get("title");
   const artist = formData.get("artist");
+  const featuringArtist = formData.get("feat-artists") || null;
   const duration = formData.get("duration");
   const date = formData.get("release-date");
   const url = formData.get("link");
-  const isAgeRestricted = formData.get("age-restricted");
+  const description = formData.get("description") || null;
   const views = formData.get("views");
+  const rating = formData.get("rating") || "None";
+  const isAgeRestricted = formData.get("age-restricted");
+  const notes = formData.get("notes") || null;
 
   const data = {
     title,
     artist,
+    featuringArtist,
     duration,
     date,
     url,
-    isAgeRestricted,
+    description,
     views,
+    rating,
+    isAgeRestricted,
+    notes,
   };
 
   try {
@@ -49,7 +57,7 @@ const addMusic = () => {
       <label htmlFor="description">Description:</label>
       <textarea name="description" id="description"></textarea>
       <label htmlFor="views">Views:</label>
-      <input type="number" name="views" id="views" />
+      <input type="number" name="views" id="views" required />
       <label htmlFor="rating">Rating:</label>
       <select name="rating" id="rating" defaultValue="none">
         <option value="none">None</option>
