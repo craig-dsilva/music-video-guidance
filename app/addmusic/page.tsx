@@ -11,7 +11,7 @@ const addMusicData = async (formData: FormData) => {
   const url = formData.get("link");
   const description = formData.get("description") || null;
   const views = formData.get("views");
-  const rating = formData.get("rating") || "None";
+  const rating = formData.get("rating");
   const isAgeRestricted = formData.get("age-restricted");
   const notes = formData.get("notes") || null;
 
