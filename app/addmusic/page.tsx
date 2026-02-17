@@ -9,6 +9,7 @@ const addMusicData = async (formData: FormData) => {
   const date = formData.get("release-date");
   const url = formData.get("link");
   const isAgeRestricted = formData.get("age-restricted");
+  const views = formData.get("views");
 
   const data = {
     title,
@@ -17,6 +18,7 @@ const addMusicData = async (formData: FormData) => {
     date,
     url,
     isAgeRestricted,
+    views,
   };
 
   try {
@@ -46,6 +48,8 @@ const addMusic = () => {
       <input type="url" name="link" id="link" required />
       <label htmlFor="description">Description:</label>
       <textarea name="description" id="description"></textarea>
+      <label htmlFor="views">Views:</label>
+      <input type="number" name="views" id="views" />
       <label htmlFor="rating">Rating:</label>
       <select name="rating" id="rating" defaultValue="none">
         <option value="none">None</option>
