@@ -12,8 +12,14 @@ const addMusicData = async (formData: FormData) => {
   const description = formData.get("description") || null;
   const views = formData.get("views");
   const rating = formData.get("rating");
+  const contentData = formData.get("content");
   const isAgeRestricted = formData.get("age-restricted");
   const notes = formData.get("notes") || null;
+
+  if (typeof contentData !== "string")
+    throw new Error("content is missing or invalid");
+
+  const content = contentData.split(";") || [];
 
   const data = {
     title,
@@ -25,6 +31,7 @@ const addMusicData = async (formData: FormData) => {
     description,
     views,
     rating,
+    content,
     isAgeRestricted,
     notes,
   };
@@ -65,7 +72,9 @@ const addMusic = () => {
         <option value="moderate">Moderate</option>
         <option value="severe">Severe</option>
       </select>
-      {/* Content form */}
+      <label htmlFor="content">Content:</label>
+      <i>Use ; to seperate points</i>
+      <textarea name="content" id="content"></textarea>
       <label htmlFor="age-restricted">Age restricted?:</label>
       <select name="age-restricted" id="age-restricted" defaultValue="no">
         <option value="yes">Yes</option>
