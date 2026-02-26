@@ -48,7 +48,10 @@ const addMusicData = async (formData: FormData) => {
 
 const addMusic = () => {
   return (
-    <Form className="flex flex-col gap-2 px-5" action={addMusicData}>
+    <Form
+      className="flex flex-col gap-2 px-5 lg:grid lg:grid-cols-[15rem_minmax(0,24rem)] lg:justify-center lg:gap-0 lg:gap-y-5"
+      action={addMusicData}
+    >
       <label htmlFor="title">Title:</label>
       <input type="text" name="title" id="title" required />
       <label htmlFor="artist">Artists:</label>
@@ -74,7 +77,11 @@ const addMusic = () => {
       </select>
       <label htmlFor="content">Content:</label>
       <i>Use ; to seperate points</i>
-      <textarea name="content" id="content"></textarea>
+      <textarea
+        className="lg:col-start-2"
+        name="content"
+        id="content"
+      ></textarea>
       <label htmlFor="age-restricted">Age restricted?:</label>
       <select name="age-restricted" id="age-restricted" defaultValue="no">
         <option value="yes">Yes</option>
@@ -82,7 +89,7 @@ const addMusic = () => {
       </select>
       <label htmlFor="notes">Notes:</label>
       <textarea className="mb-4" name="notes" id="notes"></textarea>
-      <input className="bg-white" id="submit" type="submit" />
+      <input className="bg-white lg:col-start-2" id="submit" type="submit" />
     </Form>
   );
 };
