@@ -15,8 +15,8 @@ export const GET = async () => {
 export const POST = async (req: Request) => {
   const res = await req.json();
   try {
-    await Music.insertOne(res);
-    return Response.json({ success: true, data: res });
+    const data = await Music.insertOne(res);
+    return Response.json({ data, success: true });
   } catch (error) {
     return Response.json({ success: false, error });
   }

@@ -1,3 +1,6 @@
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
+
 import Form from "next/form";
 
 const addMusicData = async (formData: FormData) => {
@@ -21,7 +24,7 @@ const addMusicData = async (formData: FormData) => {
 
   const content = contentData.split(";") || [];
 
-  const data = {
+  const music = {
     title,
     artist,
     featuringArtist,
@@ -37,10 +40,11 @@ const addMusicData = async (formData: FormData) => {
   };
 
   try {
-    await fetch("http://localhost:3000/api/music", {
+    const res = await fetch("http://localhost:3000/api/music", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(music),
     });
+    const data = await res.json();
   } catch (error) {
     console.error(error);
   }
