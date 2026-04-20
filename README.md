@@ -1,6 +1,6 @@
 # Music Video Guidance
 
-A Next.js app with MongoDB for guidance on music videos.
+This app provides guidance for music videos.
 
 ## Prerequisites
 
