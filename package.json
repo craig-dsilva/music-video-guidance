@@ -1,0 +1,25 @@
+{
+  "name": "music-video-guidance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:client",
+    "test:client": "npm --prefix client t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craig-dsilva/music-video-guidance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": "^24.11"
+  },
+  "bugs": {
+    "url": "https://github.com/craig-dsilva/music-video-guidance/issues"
+  },
+  "homepage": "https://github.com/craig-dsilva/music-video-guidance#readme"
+}
