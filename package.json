@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install:all": "cd cms && npm install && cd ../client && npm install",
     "test": "npm run test:client",
-    "test:client": "npm --prefix client t"
+    "test:client": "npm --prefix client t",
+    "dev:client": "npm --prefix client run dev",
+    "dev:cms": "npm --prefix cms run develop"
   },
   "workspaces": [
     "client",
