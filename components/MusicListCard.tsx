@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Artists from "./Artists";
 
-import type { ObjectId } from "mongoose";
-
 interface MusicListCardInterface {
   id: ObjectId;
   title: string;

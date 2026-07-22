@@ -1,7 +1,5 @@
 import Artists from "@/components/Artists";
 
-import type { ObjectId } from "mongoose";
-
 interface paramsInterface {
   params: Promise<{ slug: string }>;
 }
