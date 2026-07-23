@@ -10,10 +10,6 @@
     "dev:client": "npm --prefix client run dev",
     "dev:cms": "npm --prefix cms run develop"
   },
-  "workspaces": [
-    "client",
-    "cms"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/craig-dsilva/music-video-guidance.git"
